@@ -1,0 +1,164 @@
+/******************************************
+/* CSS
+/*******************************************/
+:root{
+  --clr-light:white;
+  --clr-dark:rgb(29, 29, 29);
+  --clr-mid: rgb(70, 70, 70);
+  --clr-hover: rgb(109, 109, 109);
+  --clr-primary: var(light);
+
+  --hover-button-text: var(--clr-light);
+  --foreground: var(--clr-dark);
+  --paragraph: var(--clr-mid);
+  --background: var(--clr-light);
+  --bghover: var(--clr-mid);
+}
+.darkmode{
+  --clr-light:white;
+  --clr-dark:rgb(29, 29, 29);
+  --clr-mid: rgb(70, 70, 70);
+  --clr-hover-bg: rgb(189, 189, 189);
+  --clr-primary: var(light);
+  --clr-secondary: var(mid);
+  
+ 
+  --foreground: var(--clr-light);
+  --paragraph: var(--clr-light);
+  --background: var(--clr-dark);
+  --bghover: var(--clr-hover-bg);
+
+}
+/* Box Model Hack */
+*{
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+/* main */
+body{
+  background-color: var(--background);
+  color: var(--foreground);
+  padding: 5vh 8vw;
+}
+a{
+  font-style: none;
+  color: inherit;
+  transition: color 200ms ease-in;
+}
+nav span{
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+.nav-container{
+  display: flex;
+  align-items: center;
+}
+#nav-right{
+  display: flex;
+  justify-content: space-around;
+  flex-basis: 20%;
+  align-items: center;
+}
+.nav-dot{
+  width: 20px;
+  height: 20px;
+  background-color: var(--foreground);
+  border-radius: 50%;
+  cursor:pointer;
+  transition: padding 300ms ease;
+}
+/* #nav-dot{
+  width: 15px;
+  cursor:pointer;
+  transition: width 100ms ease-in;
+  src: local;
+} */
+
+/******************************************
+/* LAYOUT
+/*******************************************/
+/* MAIN SECTIONS */
+
+/* SECTION ONE */
+.fade-in-text {
+  display: inline-block;
+  animation: fadeIn linear 2s;
+  -webkit-animation: fadeIn linear 2s;
+  -moz-animation: fadeIn linear 2s;
+  -o-animation: fadeIn linear 2s;
+  -ms-animation: fadeIn linear 2s;
+}
+
+@keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
+@-moz-keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
+@-webkit-keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
+@-o-keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
+@-ms-keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+.container-one{
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+  height: 80vh;
+  width: 100%;
+  padding-bottom: 10vh;
+}
+.container-one h1{
+  font-size: 3.5rem;
+  font-weight: 300;
+}
+
+/******************************************
+/* ADDITIONAL STYLES
+/*******************************************/
+
+/* BUTTON */
+
+/* Media query */
+@media (min-width: 900px) {
+  nav p:hover{
+    text-decoration: underline;
+  }
+  a:hover{
+    color: var(--bghover)
+  } 
+  .nav-dot:hover{
+   padding: 12px;
+  }
+}
+@media (max-width: 600px) {
+#nav-right{
+  flex-basis: 35%;
+}
+#nav-dot{
+  width: 20px;
+}
+.container-one h1{
+  font-size: 3rem;
+}
+}
+
+@media (max-width: 380px) {
+  .container-one h1{
+    font-size: 2.5rem;
+  }
+}
