@@ -35,11 +35,3 @@ darkModeToggle.addEventListener('click', () => {
     console.log(darkMode)
   }
 })
-
-
-const comingSoonButton = document.querySelector('.buttonComingSoon')
-comingSoonButton.addEventListener('click', buttonText)
-
-function buttonText(){
-  document.querySelector('.buttonComingSoon').innerText = "Coming soon"
-}
